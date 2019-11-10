@@ -78,6 +78,16 @@ section
 	padding-bottom: 5px;
 }
 
+/* Article for projects: */
+article
+{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid black;
+}
+
 /* Copyright footer: */
 footer
 {

@@ -81,11 +81,10 @@ section
 /* Article for projects: */
 article
 {
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border: 1px solid black;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 /* Copyright footer: */

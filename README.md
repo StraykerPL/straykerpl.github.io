@@ -1,5 +1,7 @@
-# My personal webside
+## My private website
 
-Because of problems with my active webside, I have to create new webside.
+React + Next.js frontend-only
 
-straykerpl.github.io
+Here is my private website, not connected in any way with Strayker Software.
+
+[straykerpl.github.io](straykerpl.github.io)

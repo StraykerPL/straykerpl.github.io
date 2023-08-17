@@ -1,7 +1,7 @@
-## My private website
+## Personal Website
 
-React + Next.js frontend-only
+Mobirise NoCode Website
 
 Here is my private website, not connected in any way with Strayker Software.
 
-[straykerpl.github.io](straykerpl.github.io)
+Check out to get more info! [straykerpl.github.io](straykerpl.github.io)

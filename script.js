@@ -209,4 +209,54 @@ function startAnimation() {
   }
 }
 
+function setupProjectsCarousel() {
+  var arrows = document.querySelectorAll(".projects__arrow");
+  var cards = document.querySelectorAll(".project-card");
+  var status = document.querySelector(".projects__status");
+
+  if (!cards.length) {
+    return;
+  }
+
+  var activeIndex = 0;
+
+  for (var i = 0; i < cards.length; i += 1) {
+    if (cards[i].classList.contains("project-card--active")) {
+      activeIndex = i;
+      break;
+    }
+  }
+
+  function updateCarousel() {
+    for (var j = 0; j < cards.length; j += 1) {
+      var isActive = j === activeIndex;
+      cards[j].classList.toggle("project-card--active", isActive);
+      cards[j].setAttribute("aria-hidden", isActive ? "false" : "true");
+    }
+
+    if (status) {
+      status.textContent = "Project " + (activeIndex + 1) + " of " + cards.length;
+    }
+  }
+
+  function move(direction) {
+    if (direction === "next") {
+      activeIndex = (activeIndex + 1) % cards.length;
+    } else {
+      activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+    }
+    updateCarousel();
+  }
+
+  for (var k = 0; k < arrows.length; k += 1) {
+    arrows[k].addEventListener("click", function (event) {
+      var direction = event.currentTarget.getAttribute("data-direction");
+      move(direction);
+    });
+  }
+
+  updateCarousel();
+}
+
 setup();
+setupProjectsCarousel();

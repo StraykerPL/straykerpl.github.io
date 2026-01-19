@@ -17,6 +17,7 @@ This is a static site with no build step.
 - JavaScript: procedural style, no classes; keep functions small and focused.
 - Keep code ASCII-only; avoid non-ASCII punctuation in text.
 - No external libraries; use platform APIs only (HTML5/CSS3/Canvas).
+- Accessibility: provide text alternatives for canvas content and honor `prefers-reduced-motion`.
 
 ## Testing Guidelines
 - No automated tests are defined for this repository.
@@ -30,3 +31,4 @@ This is a static site with no build step.
 ## Configuration Tips
 - Keep colors and typography centralized in `styles.css` under `:root` variables.
 - Canvas sizing relies on the right column dimensions; adjust the `.hero__right` min-height if needed.
+- Security headers are represented as meta tags in `index.html`; mirror them as real headers at the host when possible.

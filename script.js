@@ -109,8 +109,8 @@ function draw() {
   var height = metrics.height;
   ctx.clearRect(0, 0, width, height);
 
-  var centerX = width * 0.55;
-  var centerY = height * 0.52;
+  var centerX = width * 0.5;
+  var centerY = height * 0.5;
 
   drawRings(centerX, centerY);
 
@@ -136,19 +136,6 @@ function draw() {
       size: 6 + index * 0.8
     };
   });
-
-  ctx.beginPath();
-  points.forEach(function (point, index) {
-    if (index === 0) {
-      ctx.moveTo(point.x, point.y);
-    } else {
-      ctx.lineTo(point.x, point.y);
-    }
-  });
-  ctx.closePath();
-  ctx.strokeStyle = "rgba(150, 185, 235, 0.35)";
-  ctx.lineWidth = 1;
-  ctx.stroke();
 
   points.forEach(function (point) {
     ctx.beginPath();

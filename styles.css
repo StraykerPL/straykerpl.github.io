@@ -57,6 +57,12 @@ body {
   justify-content: space-between;
 }
 
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .navbar__logo,
 .navbar__title {
   color: var(--ink);
@@ -65,9 +71,22 @@ body {
   letter-spacing: 0.4px;
 }
 
+.navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__logo-image {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
 .navbar__title {
   font-family: "Palatino Linotype", "Book Antiqua", serif;
   font-size: 18px;
+  line-height: 1;
 }
 
 .navbar__links {
@@ -76,12 +95,36 @@ body {
   gap: 14px 18px;
 }
 
+.navbar__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(140, 180, 230, 0.4);
+  background: rgba(8, 16, 30, 0.75);
+  color: var(--ink);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 10px;
+}
+
+.navbar__toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
 .navbar__links a {
   color: var(--muted);
   text-decoration: none;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
+  user-select: none;
   transition: color 0.3s ease;
 }
 
@@ -202,6 +245,8 @@ body {
   border: 1px solid var(--panel-border);
   border-radius: 24px;
   min-height: 280px;
+  padding: 10px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,6 +255,14 @@ body {
   letter-spacing: 1px;
   font-size: 13px;
   animation: float-in 0.9s ease both;
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .about__text {
@@ -269,6 +322,17 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--ink);
+}
+
+.icon-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-card__logo .icon-image,
+.contact-card__icon .icon-image {
+  width: 30px;
 }
 
 .dev-grid__title {
@@ -418,6 +482,7 @@ body {
 .contact-card__icon {
   width: 48px;
   height: 48px;
+  flex: 0 0 48px;
   border-radius: 16px;
   background: rgba(0, 153, 255, 0.2);
   border: 1px solid rgba(140, 180, 230, 0.4);
@@ -429,6 +494,10 @@ body {
   letter-spacing: 0.8px;
 }
 
+.contact-card__body {
+  min-width: 0;
+}
+
 .contact-card__title {
   font-size: 18px;
   font-weight: 700;
@@ -437,6 +506,7 @@ body {
 .contact-card__text {
   color: var(--muted);
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .footer {
@@ -503,6 +573,36 @@ body {
 }
 
 @media (max-width: 720px) {
+  .navbar__inner {
+    gap: 12px;
+  }
+
+  .navbar__toggle {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  .navbar__links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 0 4px;
+  }
+
+  .navbar__links.navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__links a {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(12, 22, 38, 0.6);
+  }
+
   .hero {
     padding: 0 20px !important;
   }

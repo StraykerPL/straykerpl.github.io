@@ -55,7 +55,13 @@ function initNodes() {
       label: label,
       angle: (Math.PI * 2 * index) / topics.length,
       radius: metrics.nodeBase + index * metrics.nodeStep,
-      speed: 0.002 + index * 0.0006
+      speed: 0.0018 + Math.random() * 0.0018,
+      driftSpeed: 0.0008 + Math.random() * 0.0016,
+      driftAmp: 7 + Math.random() * 16,
+      driftPhase: Math.random() * Math.PI * 2,
+      jitterSpeed: 0.008 + Math.random() * 0.022,
+      jitterAmp: 2 + Math.random() * 7,
+      jitterPhase: Math.random() * Math.PI * 2
     };
   });
   particles = Array.from({ length: 34 }, function (_, index) {
@@ -127,11 +133,12 @@ function draw() {
   drawParticles(centerX, centerY);
 
   var points = nodes.map(function (node, index) {
-    var wobble = Math.sin(time * 0.015 + index) * 8;
+    var wobble = Math.sin(time * node.driftSpeed + node.driftPhase) * node.driftAmp;
+    var jitter = Math.sin(time * node.jitterSpeed + node.jitterPhase) * node.jitterAmp;
     var angle = node.angle + time * node.speed;
     return {
-      x: centerX + Math.cos(angle) * (node.radius + wobble),
-      y: centerY + Math.sin(angle) * (node.radius + wobble * 0.6),
+      x: centerX + Math.cos(angle) * (node.radius + wobble + jitter),
+      y: centerY + Math.sin(angle) * (node.radius + (wobble + jitter) * 0.6),
       label: node.label,
       size: 6 + index * 0.8
     };
@@ -245,5 +252,46 @@ function setupProjectsCarousel() {
   updateCarousel();
 }
 
+function setupMobileNavigation() {
+  var toggle = document.querySelector(".navbar__toggle");
+  var links = document.querySelector(".navbar__links");
+
+  if (!toggle || !links) {
+    return;
+  }
+
+  var linkItems = links.querySelectorAll("a");
+
+  function closeMenu() {
+    links.classList.remove("navbar__links--open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  function openMenu() {
+    links.classList.add("navbar__links--open");
+    toggle.setAttribute("aria-expanded", "true");
+  }
+
+  toggle.addEventListener("click", function () {
+    var isOpen = links.classList.contains("navbar__links--open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  for (var i = 0; i < linkItems.length; i += 1) {
+    linkItems[i].addEventListener("click", closeMenu);
+  }
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 720) {
+      closeMenu();
+    }
+  });
+}
+
 setup();
 setupProjectsCarousel();
+setupMobileNavigation();

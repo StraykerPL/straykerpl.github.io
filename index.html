@@ -3,22 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self';">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()">
+    <meta name="description" content="Placeholder description for Daniel Strayker Nowak portfolio website.">
+    <meta name="keywords" content="placeholder, portfolio, fullstack, dotnet, developer, projects">
+    <meta name="author" content="Daniel Strayker Nowak">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://example.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Strayker Portfolio Placeholder">
+    <meta property="og:title" content="Daniel Strayker Nowak - Portfolio Placeholder">
+    <meta property="og:description" content="Placeholder Open Graph description for portfolio and projects.">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/assets/og-image-placeholder.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daniel Strayker Nowak - Portfolio Placeholder">
+    <meta name="twitter:description" content="Placeholder Twitter description for portfolio and projects.">
+    <meta name="twitter:image" content="https://example.com/assets/og-image-placeholder.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://skillicons.dev; font-src 'self'; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests; block-all-mixed-content">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
     <title>Daniel "Strayker" Nowak</title>
+    <link rel="icon" type="image/x-icon" href="assets/signet.ico">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="page" id="top">
       <nav class="navbar">
         <div class="navbar__inner">
-          <div>
-            <a class="navbar__logo" href="#top">Logo</a>
-            <a class="navbar__title" href="#top">Title Placeholder</a>
+          <div class="navbar__brand">
+            <a class="navbar__logo" href="#top" aria-label="Homepage">
+              <img class="navbar__logo-image" src="assets/signet.ico" alt="Site logo" width="32" height="32">
+            </a>
+            <a class="navbar__title" href="#top">Daniel "Strayker" Nowak</a>
           </div>
-          <div class="navbar__links" aria-label="Primary">
+          <button
+            class="navbar__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="navbar__toggle-bar" aria-hidden="true"></span>
+            <span class="navbar__toggle-bar" aria-hidden="true"></span>
+            <span class="navbar__toggle-bar" aria-hidden="true"></span>
+          </button>
+          <div class="navbar__links" id="primary-navigation" aria-label="Primary">
             <a href="#about">About Me</a>
             <a href="#environment">Dev Environment</a>
             <a href="#projects">Projects</a>
@@ -60,16 +91,14 @@
             </div>
             <div class="about__content">
               <div class="about__photo">
-                <span>Photo placeholder</span>
+                <span><img src="assets/photo.png" alt="Site logo"></span>
               </div>
               <div class="about__text">
                 <p>
-                  Placeholder text for a short bio. Share what drives the work,
-                  the focus areas, and the kind of impact you want to make.
+                  I'm self taught Fullstack .NET Developer. I like developing desktop applications and websites, discovering new technologies to achieve better results. Also keen on DevOps, Agile and Project Management. My biggest project is 32bit operating system Strayex.
                 </p>
                 <p>
-                  Placeholder for a second sentence with a personal touch and a
-                  hint of curiosity about the galaxy of tech.
+                  Likes to play video games, watch some good movies and read Fantasy/Sci-Fi books.
                 </p>
               </div>
             </div>
@@ -85,32 +114,44 @@
             </div>
             <div class="dev-grid">
               <article class="dev-grid__card">
-                <div class="dev-grid__icon">Icon</div>
+                <div class="dev-grid__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=git,github" alt="Git and GitHub icons" loading="lazy" decoding="async">
+                </div>
                 <h3 class="dev-grid__title">Repo Mission Control</h3>
                 <p class="dev-grid__text">Placeholder for how repos are organized and synced.</p>
               </article>
               <article class="dev-grid__card">
-                <div class="dev-grid__icon">Icon</div>
+                <div class="dev-grid__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=vscode,visualstudio" alt="Visual Studio Code and Visual Studio icons" loading="lazy" decoding="async">
+                </div>
                 <h3 class="dev-grid__title">Editor Dock</h3>
                 <p class="dev-grid__text">Placeholder for code editor and extensions.</p>
               </article>
               <article class="dev-grid__card">
-                <div class="dev-grid__icon">Icon</div>
+                <div class="dev-grid__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=powershell,bash" alt="PowerShell and Bash icons" loading="lazy" decoding="async">
+                </div>
                 <h3 class="dev-grid__title">Terminal Fleet</h3>
                 <p class="dev-grid__text">Placeholder for shells, prompts, and scripts.</p>
               </article>
               <article class="dev-grid__card">
-                <div class="dev-grid__icon">Icon</div>
+                <div class="dev-grid__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=dotnet,nodejs" alt=".NET and Node.js icons" loading="lazy" decoding="async">
+                </div>
                 <h3 class="dev-grid__title">Build Diagnostics</h3>
                 <p class="dev-grid__text">Placeholder for build tools and linting.</p>
               </article>
               <article class="dev-grid__card">
-                <div class="dev-grid__icon">Icon</div>
+                <div class="dev-grid__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=figma,ps" alt="Figma and Photoshop icons" loading="lazy" decoding="async">
+                </div>
                 <h3 class="dev-grid__title">Design Console</h3>
                 <p class="dev-grid__text">Placeholder for design tools and prototypes.</p>
               </article>
               <article class="dev-grid__card">
-                <div class="dev-grid__icon">Icon</div>
+                <div class="dev-grid__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=md,obsidian" alt="Markdown and Obsidian icons" loading="lazy" decoding="async">
+                </div>
                 <h3 class="dev-grid__title">Docs Relay</h3>
                 <p class="dev-grid__text">Placeholder for note taking and documentation.</p>
               </article>
@@ -136,7 +177,9 @@
             </div>
             <div class="projects__list">
               <article class="project-card project-card--active" data-index="1">
-                <div class="project-card__logo">Logo</div>
+                <div class="project-card__logo">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=dotnet" alt=".NET icon" loading="lazy" decoding="async">
+                </div>
                 <h3 class="project-card__title">Project Placeholder One</h3>
                 <p class="project-card__text">Placeholder description of the mission and outcome.</p>
                 <a class="project-card__link" href="#">Repo or landing page link</a>
@@ -147,7 +190,9 @@
                 </div>
               </article>
               <article class="project-card" data-index="2">
-                <div class="project-card__logo">Logo</div>
+                <div class="project-card__logo">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=js" alt="JavaScript icon" loading="lazy" decoding="async">
+                </div>
                 <h3 class="project-card__title">Project Placeholder Two</h3>
                 <p class="project-card__text">Placeholder description of the mission and outcome.</p>
                 <a class="project-card__link" href="#">Repo or landing page link</a>
@@ -158,7 +203,9 @@
                 </div>
               </article>
               <article class="project-card" data-index="3">
-                <div class="project-card__logo">Logo</div>
+                <div class="project-card__logo">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=ts" alt="TypeScript icon" loading="lazy" decoding="async">
+                </div>
                 <h3 class="project-card__title">Project Placeholder Three</h3>
                 <p class="project-card__text">Placeholder description of the mission and outcome.</p>
                 <a class="project-card__link" href="#">Repo or landing page link</a>
@@ -169,7 +216,9 @@
                 </div>
               </article>
               <article class="project-card" data-index="4">
-                <div class="project-card__logo">Logo</div>
+                <div class="project-card__logo">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=react" alt="React icon" loading="lazy" decoding="async">
+                </div>
                 <h3 class="project-card__title">Project Placeholder Four</h3>
                 <p class="project-card__text">Placeholder description of the mission and outcome.</p>
                 <a class="project-card__link" href="#">Repo or landing page link</a>
@@ -180,7 +229,9 @@
                 </div>
               </article>
               <article class="project-card" data-index="5">
-                <div class="project-card__logo">Logo</div>
+                <div class="project-card__logo">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL icon" loading="lazy" decoding="async">
+                </div>
                 <h3 class="project-card__title">Project Placeholder Five</h3>
                 <p class="project-card__text">Placeholder description of the mission and outcome.</p>
                 <a class="project-card__link" href="#">Repo or landing page link</a>
@@ -191,7 +242,9 @@
                 </div>
               </article>
               <article class="project-card" data-index="6">
-                <div class="project-card__logo">Logo</div>
+                <div class="project-card__logo">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=docker" alt="Docker icon" loading="lazy" decoding="async">
+                </div>
                 <h3 class="project-card__title">Project Placeholder Six</h3>
                 <p class="project-card__text">Placeholder description of the mission and outcome.</p>
                 <a class="project-card__link" href="#">Repo or landing page link</a>
@@ -213,18 +266,22 @@
               <p class="section__lead">Placeholder links for direct connection.</p>
             </div>
             <div class="contact-grid">
-              <a class="contact-card" href="#">
-                <div class="contact-card__icon">Icon</div>
-                <div>
+              <a class="contact-card" href="https://github.com/StraykerPL" target="_blank">
+                <div class="contact-card__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=github" alt="GitHub icon" loading="lazy" decoding="async">
+                </div>
+                <div class="contact-card__body">
                   <h3 class="contact-card__title">GitHub</h3>
-                  <p class="contact-card__text">Placeholder for profile link.</p>
+                  <p class="contact-card__text">https://github.com/StraykerPL</p>
                 </div>
               </a>
-              <a class="contact-card" href="#">
-                <div class="contact-card__icon">Icon</div>
-                <div>
+              <a class="contact-card" href="https://www.linkedin.com/in/daniel-strayker-nowak" target="_blank">
+                <div class="contact-card__icon">
+                  <img class="icon-image" src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn icon" loading="lazy" decoding="async">
+                </div>
+                <div class="contact-card__body">
                   <h3 class="contact-card__title">LinkedIn</h3>
-                  <p class="contact-card__text">Placeholder for profile link.</p>
+                  <p class="contact-card__text">http://www.linkedin.com/in/daniel-strayker-nowak</p>
                 </div>
               </a>
             </div>
@@ -234,7 +291,10 @@
 
       <footer class="footer">
         <div class="footer__inner">
-          <p>Copyright placeholder</p>
+          <p>
+            <p>Copyright © 2023-actual Daniel "Strayker" Nowak - All Rights Reserved under the MIT licence.</p>
+            <p>Contents of the website, like photos, texts, logos, etc. are properties of their respective owners and are not licensed under MIT license's terms.</p>
+          </p>
         </div>
       </footer>
     </div>

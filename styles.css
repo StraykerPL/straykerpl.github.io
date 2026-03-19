@@ -279,13 +279,8 @@ body {
 }
 
 .dev-grid__card {
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 20px;
   padding: 24px;
   display: grid;
-  gap: 14px;
-  box-shadow: 0 18px 40px rgba(5, 10, 20, 0.3);
   animation: float-in 0.9s ease both;
 }
 
@@ -330,6 +325,7 @@ body {
   height: auto;
 }
 
+.dev-grid__icon .icon-image,
 .project-card__logo .icon-image,
 .contact-card__icon .icon-image {
   width: 30px;
@@ -520,6 +516,10 @@ body {
   padding: 0 24px;
   color: var(--muted);
   text-align: center;
+}
+
+.external-link {
+  color: white;
 }
 
 .visually-hidden {

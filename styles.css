@@ -142,6 +142,7 @@ body {
 .hero {
   min-height: 95vh !important;
   margin: 0 auto 0;
+  padding: 0 56px;
   display: grid;
   gap: 32px;
   width: min(1100px, 100%);
@@ -387,15 +388,21 @@ body {
   border: 1px solid var(--panel-border);
   border-radius: 24px;
   padding: 32px;
-  display: none;
+  display: grid;
+  grid-area: 1 / 1;
   gap: 16px;
   box-shadow: 0 20px 46px rgba(5, 10, 20, 0.35);
   width: min(720px, 100%);
-  animation: float-in 0.9s ease both;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .project-card--active {
-  display: grid;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: float-in 0.9s ease forwards;
 }
 
 .project-card__logo {
@@ -572,7 +579,27 @@ body {
   }
 }
 
+@media (max-width: 380px) {
+  body {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 365px) {
+  .navbar__title {
+    display: none;
+  }
+
+  .navbar__inner {
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 720px) {
+  body {
+    font-size: 12px;
+  }
+
   .navbar__inner {
     gap: 12px;
   }
@@ -604,7 +631,7 @@ body {
   }
 
   .hero {
-    padding: 0 20px !important;
+    padding: 0 20px;
   }
 
   .section {
@@ -621,6 +648,111 @@ body {
 
   .project-card {
     padding: 24px;
+  }
+}
+
+@media (max-width: 350px) {
+  body {
+    font-size: 11px;
+  }
+
+  .navbar__inner {
+    gap: 10px;
+  }
+
+  .navbar__toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .navbar__links {
+    gap: 8px;
+    padding: 10px 0 2px;
+  }
+
+  .navbar__links a {
+    padding: 8px 10px;
+  }
+
+  .hero {
+    min-height: auto;
+    gap: 18px;
+    padding: 0 12px;
+  }
+
+  .hero__inner {
+    gap: 18px;
+  }
+
+  .hero__left {
+    gap: 14px;
+  }
+
+  .hero__title {
+    font-size: 26px;
+  }
+
+  .hero__lead {
+    font-size: 15px;
+  }
+
+  .hero__right {
+    width: min(100%, 220px);
+    max-width: 220px;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section__inner {
+    gap: 20px;
+    padding: 0 12px;
+  }
+
+  .section__title {
+    font-size: 24px;
+  }
+
+  .section__lead {
+    font-size: 15px;
+  }
+
+  .projects__controls {
+    gap: 10px;
+  }
+
+  .projects__status {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .project-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .project-card__title {
+    font-size: 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-card {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .footer__inner {
+    padding: 0 14px;
   }
 }
 
